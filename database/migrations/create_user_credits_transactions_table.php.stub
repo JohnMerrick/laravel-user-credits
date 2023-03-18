@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTeamCreditsTable extends Migration
+class CreateUserCreditsTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,7 @@ class AddTeamCreditsTable extends Migration
     {
         Schema::create('user_credits_transactions', function (Blueprint $table) {
             $table->increments('id');
-
-            //Foreign Key Referencing the id on the users table.
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->nullable(); 
             $table->json('description');
             $table->integer('amount')->default(0); //credit amount
         });
@@ -31,10 +28,6 @@ class AddTeamCreditsTable extends Migration
      */
     public function down()
     {
-        Schema::table('user_credits_transactions', function($table) {
-            $table->dropForeign(['user_id']);
-        });
-
-        Schema::drop('team_credits');
+        Schema::drop('user_credits_transactions');
     }
 }
