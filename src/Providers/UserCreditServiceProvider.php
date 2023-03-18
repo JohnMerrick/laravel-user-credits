@@ -1,6 +1,6 @@
 <?php
 
-namespace JohnMerrick\UserCredits;
+namespace JohnMerrick\UserCredits\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -19,7 +19,7 @@ class UserCreditServiceProvider extends ServiceProvider
             // Export the migration
             $this->publishes([
                 __DIR__ . '/../../database/migrations/create_user_credits_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_user_credits_table.php'),
-                __DIR__ . '/../../database/migrations/create_wplus_user_transactions_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_wplus_user_transactions_table.php'),
+                __DIR__ . '/../../database/migrations/create_user_credits_transactions_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_wplus_user_transactions_table.php'),
             ], 'laravel-user-credits-migrations');
        }
     }

@@ -12,7 +12,7 @@ To get started follow these steps:
  
 Then you will need to publish the migration files
 
-`php artisan vendor:publish --tag=laravel-user-credits-migrations `
+`php artisan vendor:publish --tag=laravel-user-credits-migrations`
 
 
 Now you must run the migrations....
