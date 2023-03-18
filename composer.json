@@ -1,0 +1,26 @@
+{
+    "name": "johnmerrick/laravel-user-credits",
+    "description": "Laravel Package for easily adding User Credits support",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John Merrick",
+            "email": "john.merrick@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JohnMerrick\\UserCredits\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JohnMerrick\\UserCredits\\Providers\\UserCreditServiceProvider"
+            ]
+        }
+    }
+}
